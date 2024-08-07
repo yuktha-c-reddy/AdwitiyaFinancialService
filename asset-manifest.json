@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.d83fcb7d.css",
+    "main.js": "/react-gh-pages/static/js/main.823243f7.js",
+    "static/js/453.a0295958.chunk.js": "/react-gh-pages/static/js/453.a0295958.chunk.js",
+    "static/media/finance.png": "/react-gh-pages/static/media/finance.708a6004a2b723b0dc27.png",
+    "static/media/nri.png": "/react-gh-pages/static/media/nri.e43bc3c4c6eee3413370.png",
+    "static/media/construction.png": "/react-gh-pages/static/media/construction.183b366cee368740b4e2.png",
+    "static/media/salaried.png": "/react-gh-pages/static/media/salaried.18cf63d21d33dc0475b6.png",
+    "static/media/selfLoan.png": "/react-gh-pages/static/media/selfLoan.d60486d2b2d89c7fc5aa.png",
+    "static/media/renovation.png": "/react-gh-pages/static/media/renovation.3703d6e579781166f13d.png",
+    "static/media/adwitiya.jpeg": "/react-gh-pages/static/media/adwitiya.1113902f694c600026f3.jpeg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.d83fcb7d.css.map": "/react-gh-pages/static/css/main.d83fcb7d.css.map",
+    "main.823243f7.js.map": "/react-gh-pages/static/js/main.823243f7.js.map",
+    "453.a0295958.chunk.js.map": "/react-gh-pages/static/js/453.a0295958.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d83fcb7d.css",
+    "static/js/main.823243f7.js"
+  ]
+}
