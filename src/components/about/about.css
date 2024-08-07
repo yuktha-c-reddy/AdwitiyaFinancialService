@@ -683,7 +683,7 @@ body {
   justify-content: center;
   margin: 10px;
   border-radius: 40px;
-  background-color: lightblue;
+  background-color: rgb(255, 255, 255);
 }
 #two { 
   background-color: white;

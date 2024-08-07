@@ -1,7 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import selfloan from "../../selfLoan.png"
 import "./SelfLoan.css"
+import emailjs from '@emailjs/browser';
 
 function SelfLoan() {
     const [name, setName] = useState('');
@@ -9,16 +10,31 @@ function SelfLoan() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
   
-    const handleSend = () => {
-      // Handle send action
-      console.log("Sending message:", { name, phone, email, message });
-    };
   
     const handleReset = () => {
       setName('');
       setPhone('');
       setEmail('');
       setMessage('');
+    };
+    const form1 = useRef();
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
+          publicKey: 'gBGUWAEKgUiiZt5aP',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert("Successfully sent!")
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+            alert("Failed to send!")
+          },
+        );
     };
     return (
         <div>
@@ -165,6 +181,7 @@ Must have a good credit score</li>
               type="text"
               className="input"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -172,6 +189,7 @@ Must have a good credit score</li>
               type="text"
               className="input"
               value={phone}
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
             <input
@@ -179,11 +197,12 @@ Must have a good credit score</li>
               type="email"
               className="input"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
            
             <div className="button-container" >
-              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={handleSend}>
+              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={sendEmail}>
                 Send
               </div>
               <div className="reset-button-container">

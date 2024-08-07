@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState ,useRef} from 'react';
 import './contact.css'; // Ensure you have this CSS file for styling
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -7,10 +8,6 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSend = () => {
-    // Handle send action
-    console.log("Sending message:", { name, phone, email, message });
-  };
 
   const handleReset = () => {
     setName('');
@@ -18,24 +15,41 @@ const Contact = () => {
     setEmail('');
     setMessage('');
   };
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_q08ii5o', 'template_572ozkr', form.current, {
+        publicKey: 'gBGUWAEKgUiiZt5aP',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert("Successfully sent!")
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert("Failed to send!")
+        },
+      );
+  };
 
   return (
     <div className='contact-div'>
     <div className='contact-page'>
-      {/* <div className="loader">
-        <span>Adwitiya Financial Services</span>
-        <span>Adwitiya Financial Services</span>
-      </div> */}
       <h1  className='heading-contact' style={{display:"flex",alignItems:"center",justifyContent:"center"}}><span>"CON </span><span>TACT"</span></h1>
       <div className='contact'>
         <div className="form-container">
           <div className="form">
+          <form ref={form} onSubmit={sendEmail}>
             <span className="heading">GET IN TOUCH!</span>
             <input
               placeholder="Name"
               type="text"
               className="input"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -43,6 +57,7 @@ const Contact = () => {
               type="text"
               className="input"
               value={phone}
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
             <input
@@ -50,6 +65,7 @@ const Contact = () => {
               type="email"
               className="input"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <textarea
@@ -58,10 +74,11 @@ const Contact = () => {
               cols="30"
               className="textarea"
               value={message}
+              name="message"
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <div className="button-container">
-              <div className="send-button" onClick={handleSend}>
+              <div className="send-button" onClick={sendEmail}>
                 Send
               </div>
               <div className="reset-button-container">
@@ -70,6 +87,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>

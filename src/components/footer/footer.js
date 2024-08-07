@@ -130,7 +130,7 @@ function Footer() {
                                 target="_self"
                             >
                                 {" "}
-                                adwitiyafinancialservices@gmail.com{" "}
+                                info@adwitiyafinancialservices.com{" "}
                             </p>
                         </div>
                         <div className="footer-call-to-action">

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState , useRef } from 'react';
 import "./PropertyLoan.css";
+import emailjs from '@emailjs/browser';
 
 function PropertyLoan() {
     const [name, setName] = useState('');
@@ -9,16 +10,32 @@ function PropertyLoan() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
   
-    const handleSend = () => {
-      // Handle send action
-      console.log("Sending message:", { name, phone, email, message });
-    };
+ 
   
     const handleReset = () => {
       setName('');
       setPhone('');
       setEmail('');
       setMessage('');
+    };
+    const form1 = useRef();
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
+          publicKey: 'gBGUWAEKgUiiZt5aP',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert("Successfully sent!")
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+            alert("Failed to send!")
+          },
+        );
     };
     return (
         <div>
@@ -159,6 +176,7 @@ Must have a debt-to-income ratio below a certain threshold</li>
         </div>
         <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
         <div className="form" id='contact-us'>
+        <form ref={form1} onSubmit={sendEmail}>
             <span className="heading" style={{fontFamily:"Barlow",color:"#000070"}}>READY TO TAKE THE NEXT STEP?</span>
             <h5 className='get-in-touch-line' style={{fontFamily:"Barlow",color:"#000"}}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
             <input
@@ -166,6 +184,7 @@ Must have a debt-to-income ratio below a certain threshold</li>
               type="text"
               className="input"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -173,6 +192,7 @@ Must have a debt-to-income ratio below a certain threshold</li>
               type="text"
               className="input"
               value={phone}
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
             <input
@@ -180,11 +200,12 @@ Must have a debt-to-income ratio below a certain threshold</li>
               type="email"
               className="input"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
            
             <div className="button-container" >
-              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={handleSend}>
+              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={sendEmail}>
                 Send
               </div>
               <div className="reset-button-container">
@@ -193,6 +214,7 @@ Must have a debt-to-income ratio below a certain threshold</li>
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>

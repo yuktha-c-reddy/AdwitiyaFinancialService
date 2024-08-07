@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { useState , useRef } from 'react';
 import construction from '../../construction.png'
 import "./ConstructionLoan.css"
 import DialogBox from '../DialogBox/DialogBox';
+import emailjs from '@emailjs/browser';
 
 function ConstructionLoan() {
     const [name, setName] = useState('');
@@ -21,6 +22,25 @@ function ConstructionLoan() {
       setPhone('');
       setEmail('');
       setMessage('');
+    };
+    const form1 = useRef();
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
+          publicKey: 'gBGUWAEKgUiiZt5aP',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert("Successfully sent!")
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+            alert("Failed to send!")
+          },
+        );
     };
     return (
         <div>
@@ -96,7 +116,7 @@ Home construction loans are typically offered by banks and other financial insti
   <div id='two' style={{backgroundColor:"lightblue"}}>
   
   <h1 className='home-headings'>ELIGIBILITY</h1>
-    <p style={{fontSize:"23px" ,marginTop:"40px",  lineHeight:"2"}}>To be eligible for a home construction loan, the borrower must meet the following criteria:
+    <p style={{marginTop:"40px",  lineHeight:"2"}}>To be eligible for a home construction loan, the borrower must meet the following criteria:
     <br/><br/>
     <ul  style={{fontFamily:"monospace"}}>
 
@@ -154,6 +174,7 @@ Home construction loans are typically offered by banks and other financial insti
         </div>
         <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
         <div className="form" id='contact-us'>
+        <form ref={form1} onSubmit={sendEmail}>
             <span className="heading" style={{fontFamily:"Barlow",color:"#000070"}}>READY TO TAKE THE NEXT STEP?</span>
             <h5 className='get-in-touch-line' style={{fontFamily:"Barlow",color:"#000"}}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
             <input
@@ -161,6 +182,7 @@ Home construction loans are typically offered by banks and other financial insti
               type="text"
               className="input"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -168,6 +190,7 @@ Home construction loans are typically offered by banks and other financial insti
               type="text"
               className="input"
               value={phone}
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
             <input
@@ -175,11 +198,12 @@ Home construction loans are typically offered by banks and other financial insti
               type="email"
               className="input"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
            
             <div className="button-container" >
-              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={handleSend}>
+              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={sendEmail}>
                 Send
               </div>
               <div className="reset-button-container">
@@ -188,6 +212,7 @@ Home construction loans are typically offered by banks and other financial insti
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>

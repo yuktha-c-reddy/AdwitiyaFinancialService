@@ -1,7 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState , useRef } from 'react';
 import './about.css'; // // Assuming you have a CSS file for styling
 import DialogBox from '../DialogBox/DialogBox';
+import emailjs from '@emailjs/browser';
 
 const About = () => {
   const [name, setName] = useState('');
@@ -9,16 +10,30 @@ const About = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSend = () => {
-    // Handle send action
-    console.log("Sending message:", { name, phone, email, message });
-  };
-
   const handleReset = () => {
     setName('');
     setPhone('');
     setEmail('');
     setMessage('');
+  };
+  const form1 = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
+        publicKey: 'gBGUWAEKgUiiZt5aP',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert("Successfully sent!")
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert("Failed to send!")
+        },
+      );
   };
   return (
     <div className="about-page">
@@ -36,7 +51,7 @@ const About = () => {
 
 <div className='about-wrapper'>
 <div class="wrapper"> 
-<div id='one'>
+<div id='one' style={{background:"#fff"}}>
 <img src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'>
@@ -49,10 +64,10 @@ const About = () => {
 </div>
 <div className='about-wrapper'>
 <div class="wrapper"> 
-<div id='one' style={{backgroundColor:"fff"}}>
+<div id='one' style={{backgroundColor:"#fff"}}>
 <img  style={{backgroundColor:"fff"}} src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
 </div> 
-  <div id='two'>
+  <div id='two'  style={{background:"#fff"}}>
   <h1 className='home-headings'>HOW WE THINK?</h1>
     <p>As a team, we at AFS have a thorough understanding of the Indian customer market and banking system. With a proven track record of satisfying thousands of customers, we take a tailored approach to help individuals achieve their needs and dreams. Whether it’s managing finances or providing loans from top banks, we are here to support you every step of the way.<br/><br/>
      Throughout our journey, we’ve served diverse segments, spanning different industries and backgrounds. We look forward to extending our expertise to you, with the hope that you too will join the ranks of our satisfied customers. Trust MFS for all your home loan needs in Bangalore.
@@ -61,7 +76,7 @@ const About = () => {
 </div>
 <div className='about-wrapper'>
 <div class="wrapper">   
-<div id='one'>
+<div id='one'  style={{background:"#fff"}}>
 <img src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'>
@@ -285,6 +300,7 @@ We are also committed to providing our customers with competitive interest rates
         
         <div className='get-in-touch-form1 form-container' style={{backgroundColor:"transparent"}}>
         <div className="form" id='contact-us'>
+        <form ref={form1} onSubmit={sendEmail}>
             <span className="heading" style={{fontFamily:"Barlow",color:"#000070"}}>READY TO TAKE THE NEXT STEP?</span>
             <h5 className='get-in-touch-line' style={{fontFamily:"Barlow",color:"#48efff"}}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
             <input
@@ -292,6 +308,7 @@ We are also committed to providing our customers with competitive interest rates
               type="text"
               className="input"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -299,6 +316,7 @@ We are also committed to providing our customers with competitive interest rates
               type="text"
               className="input"
               value={phone}
+              name="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
             <input
@@ -306,11 +324,12 @@ We are also committed to providing our customers with competitive interest rates
               type="email"
               className="input"
               value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
            
             <div className="button-container">
-              <div className="send-button" onClick={handleSend}>
+              <div className="send-button" onClick={sendEmail}>
                 Send
               </div>
               <div className="reset-button-container">
@@ -319,6 +338,7 @@ We are also committed to providing our customers with competitive interest rates
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
     </div>
