@@ -1,0 +1,241 @@
+.docs{
+    margin-top: 250px;
+}
+
+.letter-image {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.animated-mail {
+	position: relative;
+	height: 500px;
+	width: 500px;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	transition: .4s;
+	
+	.body {
+		position: absolute;
+		bottom: 0;
+		width: 500px;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 100px 200px;
+		border-color: transparent transparent #133955 transparent;
+		z-index: 2;
+	}
+	
+	.top-fold {
+		position: absolute;
+		top: 50px;
+		width: 500px;
+		height: 500px;
+		border-style: solid;
+		border-width: 50px 100px 0 100px;
+		-webkit-transform-origin: 50% 0%;
+		-webkit-transition: transform .4s .4s, z-index .2s .4s;
+		-moz-transform-origin: 50% 0%;
+		-moz-transition: transform .4s .4s, z-index .2s .4s;
+		transform-origin: 50% 0%;
+		transition: transform .4s .4s, z-index .2s .4s;
+		border-color: #033457 transparent transparent transparent;
+		z-index: 2;
+	}
+	
+	.back-fold {
+		position: absolute;
+		bottom: 0;
+		width: 500px;
+		height: 450px;
+		background: #59a9e3;
+		z-index: 0;
+	}
+	
+	.left-fold {
+		position: absolute;
+		bottom: 0;
+		width: 250px;
+		height: 100px;
+		border-style: solid;
+		border-width: 50px 0 50px 100px;
+		border-color: transparent transparent transparent #59a9e3;
+		z-index: 2;
+	}
+	
+	.letter {
+		left: 20px;
+		bottom: 0px;
+		position: absolute;
+		width: 450px;
+		height: 400px;
+		background: white;
+		z-index: 1;
+		overflow: hidden;
+		-webkit-transition: .4s .2s;
+		-moz-transition: .4s .2s;
+		transition: .4s .2s;
+		
+		.letter-border {
+			height: 10px;
+			width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #034aa0,
+        #28cae7 8px,
+        transparent 8px,
+        transparent 18px
+      );
+		}
+		
+		.letter-title {
+			margin-top: 10px;
+			margin-left: 0px;
+			height: 30px;
+			width: 100%;
+            text-align: center;
+            color:#000070;
+            font-size: 25px;
+			background: #a7cde9;
+		}
+		.letter-context {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 100%;
+			width: 100%;
+            font-size: 20px;
+            
+            color:#093060;
+			/* background: #59a9e3; */
+		}
+
+        .ul-docs{
+            list-style:disc;
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+		
+		.letter-stamp {
+			margin-top: 30px;
+			margin-left: 120px;
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			background: #59a9e3;
+			opacity: 0.3;
+		}
+	}
+}
+
+.shadow {
+	position: absolute;
+	top: 500px;
+	left: 50%;
+	width: 400px;
+	height: 30px;
+	transition: .4s;
+	transform: translateX(-50%);
+	-webkit-transition: .4s;
+	-webkit-transform: translateX(-50%);
+	-moz-transition: .4s;
+	-moz-transform: translateX(-50%);
+	
+	border-radius: 100%;
+	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+	.letter-image:hover {
+		.animated-mail {
+			transform: translateY(50px);
+			-webkit-transform: translateY(50px);
+			-moz-transform: translateY(50px);
+		}
+		
+		.animated-mail .top-fold {
+			transition: transform .4s, z-index .2s;
+			transform: rotateX(180deg);
+			-webkit-transition: transform .4s, z-index .2s;
+			-webkit-transform: rotateX(180deg);
+			-moz-transition: transform .4s, z-index .2s;
+			-moz-transform: rotateX(180deg);
+			z-index: 0;
+		}
+		
+		.animated-mail .letter {
+			height: 180px;
+		}
+		
+		.shadow {
+			width: 250px;
+		}
+	}
+
+	.conclusion-loan{
+		margin-bottom: 6vh;
+	}
+
+    
+    .benefits{
+      margin:100px auto;
+      background-color: #ffffff;
+      width:90%;
+      overflow:hidden;
+     
+      border-radius: 10px;
+      position:relative;
+      margin-top: 10vh;
+    }
+    .photo{
+      color:#000000;
+      position:absolute;
+      animation:round 16s infinite;
+      opacity:0;
+      width: 100%;
+      height: 100%;
+      
+    }
+    @keyframes round{   
+      25%{
+        opacity:1;
+      }
+      40%{
+        opacity:0;
+      }
+    } 
+    
+    @for {
+      .photo:nth-child(1){
+        animation-delay:12s
+      }
+    }
+    @for {
+        .photo:nth-child(2){
+          animation-delay:8s
+        }
+      }
+      @for {
+        .photo:nth-child(3){
+          animation-delay:4s
+        }
+      }
+      @for {
+        .photo:nth-child(4){
+          animation-delay:0s
+        }
+      }
+       
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: black; 
+  }
+
+  /* .carousel-item img{
+	height:80vh;
+  } */
