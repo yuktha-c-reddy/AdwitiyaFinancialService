@@ -3,6 +3,10 @@ import { useState , useRef } from 'react';
 import './about.css'; // // Assuming you have a CSS file for styling
 import DialogBox from '../DialogBox/DialogBox';
 import emailjs from '@emailjs/browser';
+import team1 from '../../team1.jpeg'
+import team2 from '../../team2.jpeg'
+import team3 from '../../team3.jpeg'
+import img1 from '../../img1.jpeg'
 
 const About = () => {
   const [name, setName] = useState('');
@@ -77,7 +81,7 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper">   
 <div id='one'  style={{background:"#fff"}}>
-<img src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
+<img src={img1} width="450" height="300" alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHY CHOOSE US?</h1>
@@ -114,14 +118,14 @@ We are also committed to providing our customers with competitive interest rates
     <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft12.svg"/>
+          <img class="team-img" src={team1}/>
         </div>
         <div class="team-card-content">
           <p class="text-blk name">
-            Roger Lubin
+            Vandana
           </p>
           <p class="text-blk position">
-            CEO
+            Director
           </p>
         </div>
       </div>
@@ -129,14 +133,14 @@ We are also committed to providing our customers with competitive interest rates
     <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft13.svg"/>
+          <img class="team-img" src={team2}/>
         </div>
         <div class="team-card-content">
           <p class="text-blk name">
-            Roger Lubin
+            Geetha
           </p>
           <p class="text-blk position">
-            CEO
+            Director
           </p>
         </div>
       </div>
@@ -144,149 +148,14 @@ We are also committed to providing our customers with competitive interest rates
     <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft14.svg"/>
+          <img class="team-img" src={team3}/>
         </div>
         <div class="team-card-content">
           <p class="text-blk name">
-            Roger Lubin
+            Sireesha
           </p>
           <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft12.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft13.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft14.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft12.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft13.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft14.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft12.svg"/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft13.svg" alt=" "/>
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft14.svg" alt="" />
-        </div>
-        <div class="team-card-content">
-          <p class="text-blk name">
-            Roger Lubin
-          </p>
-          <p class="text-blk position">
-            CEO
+            Director
           </p>
         </div>
       </div>
