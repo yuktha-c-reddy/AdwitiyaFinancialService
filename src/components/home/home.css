@@ -445,12 +445,12 @@ span.li {
     font-size: 20px;
   }
   .welcome , .welcome-text{
-    font-size: 2vh;
+    font-size: 2.5vh;
  }
   .home-headings{
     font-size: 3vh;
   }
-  .eligibility p{
+  p.eligibility{
     font-size: 2vh;
   }
 }
