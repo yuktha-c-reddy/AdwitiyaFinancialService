@@ -134,7 +134,7 @@ Home construction loans are typically offered by banks and other financial insti
     <div className='docs'>
     <div class="letter-image">
 	<div class="animated-mail">
-		<div class="back-fold"></div>
+		<div class="back-fold" style={{backgroundColor: "#59a9e3"}}></div>
 		<div class="letter">
 			<div class="letter-border"></div>
 			<div class="letter-title">DOCUMENTS REQUIRED</div>
@@ -147,12 +147,12 @@ Home construction loans are typically offered by banks and other financial insti
             <li>Proof of income</li>
             <li>Plan for the construction of the home</li>
 </ul></div>
-			<div class="letter-stamp">
+			<div class="letter-stamp" >
 				<div class="letter-stamp-inner"></div>
 			</div>
 		</div>
-		<div class="top-fold"></div>
-		<div class="body"></div>
+		<div class="top-fold" style={{width:"100%"}}></div>
+		<div class="body" style={{width:"100%"}}></div>
 		<div class="left-fold"></div>
 	</div>
 	<div class="shadow"></div>
