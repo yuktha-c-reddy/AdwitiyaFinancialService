@@ -38,6 +38,25 @@ const Home = () => {
         },
       );
   };
+  const phoneform = useRef();
+  const sendEmailphone = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_q08ii5o', 'template_rl3b2hg', phoneform.current, {
+        publicKey: 'gBGUWAEKgUiiZt5aP',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert("Successfully sent!")
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert("Failed to send!")
+        },
+      );
+  };
   
   return (
     <div className="home">
@@ -48,8 +67,10 @@ const Home = () => {
         <p><i style={{color:"lightblue"}}>Home Loan Solutions for Every Dream Home</i></p>
         <h1 className='home-tagline' >YOUR PATH TO HOMEOWNERSHIP<br/> STARTS HERE</h1>
         <p>Get a free Check with our unique service provider. Take the first step towards your future today!</p>
-        <input placeholder="Enter phone number" name="input" className="input-style" type="text"/><br/><br/>
-        <button className="home-enquiry-btn">Submit</button>
+        <form ref={phoneform}>
+        <input placeholder="Enter phone number" name="phonenumber" className="input-style" type="text"/><br/><br/>
+        <button className="home-enquiry-btn" onClick={sendEmailphone}>Submit</button>
+        </form>
 	    </div>
     </div>
     <div className='welcome'>

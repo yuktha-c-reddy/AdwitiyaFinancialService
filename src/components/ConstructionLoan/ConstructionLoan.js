@@ -116,7 +116,7 @@ Home construction loans are typically offered by banks and other financial insti
   <div id='two' style={{backgroundColor:"lightblue"}}>
   
   <h1 className='home-headings'>ELIGIBILITY</h1>
-    <p style={{marginTop:"40px",  lineHeight:"2"}}>To be eligible for a home construction loan, the borrower must meet the following criteria:
+    <p style={{fontSize:"23px" ,marginTop:"40px",  lineHeight:"2"}}>To be eligible for a home construction loan, the borrower must meet the following criteria:
     <br/><br/>
     <ul  style={{fontFamily:"monospace"}}>
 
@@ -134,7 +134,7 @@ Home construction loans are typically offered by banks and other financial insti
     <div className='docs'>
     <div class="letter-image">
 	<div class="animated-mail">
-		<div class="back-fold" style={{backgroundColor: "#59a9e3"}}></div>
+		<div class="back-fold" style={{width:"100%",height:"90%"}}></div>
 		<div class="letter">
 			<div class="letter-border"></div>
 			<div class="letter-title">DOCUMENTS REQUIRED</div>

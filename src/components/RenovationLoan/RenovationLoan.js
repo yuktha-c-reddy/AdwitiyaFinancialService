@@ -134,7 +134,7 @@ Must have a good credit score</li>
     <div className='docs'>
     <div class="letter-image">
 	<div class="animated-mail">
-		<div class="back-fold"></div>
+		<div class="back-fold" style={{width:"100%",height:"90%"}}></div>
 		<div class="letter">
 			<div class="letter-border"></div>
 			<div class="letter-title">DOCUMENTS REQUIRED</div>
@@ -150,8 +150,8 @@ Must have a good credit score</li>
 				<div class="letter-stamp-inner"></div>
 			</div>
 		</div>
-		<div class="top-fold"></div>
-		<div class="body"></div>
+		<div class="top-fold" style={{width:"100%"}}></div>
+		<div class="body" style={{width:"100%"}}></div>
 		<div class="left-fold"></div>
 	</div>
 	<div class="shadow"></div>
