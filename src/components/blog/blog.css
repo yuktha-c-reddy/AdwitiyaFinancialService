@@ -31,7 +31,11 @@
     
     margin-bottom: 30px;
 }
-
+@media screen and (max-width:400px) {
+	.blog-content{
+		width:90%;
+	}
+}
 .blog-content p{
    
     margin-bottom: 50px;
