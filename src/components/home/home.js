@@ -65,7 +65,7 @@ const Home = () => {
     <div className="home-image-container">
     <img src="https://assets-news.housing.com/news/wp-content/uploads/2019/11/02110936/How-to-get-a-home-loan-to-construct-your-own-house-FB-1200x700-compressed-1200x700.jpg" alt="image" />
 	    <div className="overlay-text">
-        <p><i style={{color:"lightblue"}}>Home Loan Solutions for Every Dream Home</i></p>
+        <p><i  style={{color:"white"}}>Home Loan Solutions for Every Dream Home</i></p>
         <h1 className='home-tagline' >YOUR PATH TO HOMEOWNERSHIP<br/> STARTS HERE</h1>
         <p>Get a free Check with our unique service provider. Take the first step towards your future today!</p>
         <form ref={phoneform}>
@@ -75,10 +75,11 @@ const Home = () => {
 	    </div>
     </div>
     <div className='welcome'>
-        <h1 className='home-headings'>Welcome to AFS , Unique Service Provider</h1>
+        <h1 className='home-headings1'>Welcome to AFS</h1>
+        <h1 className='tagline'>Unique Service Provider</h1>
         <p  className='welcome-text' style={{textAlign:"center"}}>At Adwitiya Financial Services, we understand that purchasing a home is not just a financial decision but a deeply personal milestone. Our mission is to empower you on your journey to homeownership, providing expert guidance and flexible home loan solutions tailored to your unique needs.
 <br/><br/>
-With years of industry experience, our team of dedicated professionals is committed to making your dream of owning a home a reality. Whether you’re a first-time buyer or looking to refinance, trust Merit to be your partner every step of the way. We provide property loans in Bangalore, partnering with SBI, HDFC, Federal Bank, LIC, and Bank of India for your financial success.</p>
+With years of industry experience, our team of dedicated professionals is committed to making your dream of owning a home a reality. Whether you’re a first-time buyer or looking to refinance, trust Adwitiya to be your partner every step of the way. We provide property loans in Bangalore, partnering with SBI, HDFC, Federal Bank, LIC, ICICI , PNB and Bank of India for your financial success.</p>
     </div>
    
     <div className="widget">

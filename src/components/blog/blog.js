@@ -67,7 +67,7 @@ const Blog = () => {
          </p>
          <div class="blog-headings">Conclusion</div>
          <p>
-         Getting pre-approved for a home loan is a quick and easy process that can save you time and money in the long run. By following the tips above, you can increase your chances of getting pre-approved and start shopping for your new home with confidence. There are a number of lenders that offer easy home loans to borrowers with a variety of credit scores and financial situations. Choose the best home loan lender that, like Merit Financial Service,  specializes in home loans and can help you get instant loan approval with a lower interest rate. Choose your lenders wisely.
+         Getting pre-approved for a home loan is a quick and easy process that can save you time and money in the long run. By following the tips above, you can increase your chances of getting pre-approved and start shopping for your new home with confidence. There are a number of lenders that offer easy home loans to borrowers with a variety of credit scores and financial situations. Choose the best home loan lender that, like Adwitiya Financial Service,  specializes in home loans and can help you get instant loan approval with a lower interest rate. Choose your lenders wisely.
          </p>
          
     

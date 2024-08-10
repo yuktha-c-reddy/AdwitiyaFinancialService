@@ -11,8 +11,8 @@ const House = () => {
 
   return (
     <div className='house-cont' style={{display:"flex",alignItems:"center",justifyContent:"center",textAlign:"center"}}>
-    <h1 className='home-headings' style={{marginBottom:"0vh",marginTop:"5vh",fontSize:"9vh"}}>Welcome to AFS</h1>
-    <h1 className='home-headings' style={{color:"#79AAFF", marginTop:"1vh",marginBottom:"10vh",fontSize:"5vh",fontFamily:"monospace"}}>Unique Service Provider</h1>
+    <h1 className='home-headings1'>Welcome to AFS</h1>
+    <h1 className='tagline'>Unique Service Provider</h1>
    
     <div className="house" data-rooms={rooms}>
       <div className="house-wings" data-flip-key="wings">

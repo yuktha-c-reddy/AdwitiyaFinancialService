@@ -60,7 +60,7 @@ const About = () => {
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHO WE ARE?</h1>
-    <p>As a leading home loan agency in Bangalore, the AFS Team is unique service provider in the financial sector.<br/><br/>
+    <p>As a leading home loan agency in Bangalore, the Adwitiya Financial Services Team is unique service provider in the financial sector.<br/><br/>
       We understand that the process of buying a home in India can be complex and daunting for individuals. That’s why we offer a hassle-free and transparent home loan process. We will work with you to understand your needs and choose the right loan for you. We will also provide you with guidance and support throughout the loan application process.<br/><br/>
       We take pride in not only providing crucial financial assistance but also in realizing the dreams of our clients. Situated in the heart of India’s financial landscape, Silicon Valley, Bangalore, we have established ourselves as the go-to financial institution in the startup capital and investor hub of India, Namma Bengaluru.
      </p> </div>
@@ -73,8 +73,8 @@ const About = () => {
 </div> 
   <div id='two'  style={{background:"#fff"}}>
   <h1 className='home-headings'>HOW WE THINK?</h1>
-    <p>As a team, we at AFS have a thorough understanding of the Indian customer market and banking system. With a proven track record of satisfying thousands of customers, we take a tailored approach to help individuals achieve their needs and dreams. Whether it’s managing finances or providing loans from top banks, we are here to support you every step of the way.<br/><br/>
-     Throughout our journey, we’ve served diverse segments, spanning different industries and backgrounds. We look forward to extending our expertise to you, with the hope that you too will join the ranks of our satisfied customers. Trust MFS for all your home loan needs in Bangalore.
+    <p>As a team, we at Adwitiya Financial Services have a thorough understanding of the Indian customer market and banking system. With a proven track record of satisfying thousands of customers, we take a tailored approach to help individuals achieve their needs and dreams. Whether it’s managing finances or providing loans from top banks, we are here to support you every step of the way.<br/><br/>
+     Throughout our journey, we’ve served diverse segments, spanning different industries and backgrounds. We look forward to extending our expertise to you, with the hope that you too will join the ranks of our satisfied customers. Trust AFS for all your home loan needs in Bangalore.
      </p></div>
 </div>
 </div>
