@@ -70,7 +70,7 @@ const Home = () => {
         <h1 className='home-tagline' >YOUR PATH TO HOMEOWNERSHIP<br/> STARTS HERE</h1>
         <p>Get a free Check with our unique service provider. Take the first step towards your future today!</p>
         <form ref={phoneform}>
-        <input placeholder="Enter phone number" name="phonenumber" className="input-style" type="text"/><br/><br/>
+        <input placeholder="Enter phone number" name="phone" className="input-style" type="text"/><br/><br/>
         <button className="home-enquiry-btn" onClick={sendEmailphone}>Submit</button>
         </form>
 	    </div>

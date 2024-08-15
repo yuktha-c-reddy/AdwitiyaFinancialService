@@ -47,7 +47,7 @@ function ConstructionLoan() {
         <div>
         <DialogBox/>
             <div class="home-image-container" style={{width:"100%" , height:"80vh"}}>
-            <img src={construction} alt="image" />
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/033/987/227/small_2x/model-house-and-wood-blocks-with-word-loan-on-table-plan-finances-investments-and-savings-to-buy-house-real-estate-money-coin-and-home-on-table-business-accounting-and-tax-and-insurance-concept-photo.jpg" alt="image" />
 	        {/* <div class="overlay-text" style={{textAlign:"left",left:"80%"}}>
         <h1 className='home-headings' style={{color:"#000070",fontFamily:"Barlow", letterSpacing:"1.1px" , fontSize:"3rem"}}>HOME CONSTRUCTION<br/> LOAN</h1>
         
