@@ -58,12 +58,12 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper"> 
 <div id='one' style={{background:"#fff"}}>
-<img src={logo} width="450"  alt='Responsive 2-column layout' style={{height:"75vh"}}/>
+<img src={logo} width="450"  alt='Responsive 2-column layout' style={{marginTop:"5vh",marginLeft:"5vh" ,width:"70vh",height:"70vh"}}/>
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHO WE ARE?</h1>
     <p>As a leading home loan agency in Bangalore, the Adwitiya Financial Services Team is unique service provider in the financial sector.<br/><br/>
-      We understand that the process of buying a home in India can be complex and daunting for individuals. That’s why we offer a hassle-free and transparent home loan process. We will work with you to understand your needs and choose the right loan for you. We will also provide you with guidance and support throughout the loan application process.<br/><br/>
+      We understand that the process of buying a home in India can be complex and daunting for individuals. That’s why we offer a hassle-free and transparent home loan process. We will work with you to understand your needs and choose the right loan for you.<br/><br/>
       We take pride in not only providing crucial financial assistance but also in realizing the dreams of our clients. Situated in the heart of India’s financial landscape, Silicon Valley, Bangalore, we have established ourselves as the go-to financial institution in the startup capital and investor hub of India, Namma Bengaluru.
      </p> </div>
 </div>
