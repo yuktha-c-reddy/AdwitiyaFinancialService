@@ -687,7 +687,7 @@ body {
   justify-content: center;
   margin: 10px;
   border-radius: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
 }
 #two { 
   background-color: white;

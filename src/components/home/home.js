@@ -5,6 +5,7 @@ import './home.css';
 import DialogBox from '../DialogBox/DialogBox';
 import emailjs from '@emailjs/browser';
 import img from '../../img1.jpeg'
+import contactImage from '../../contact.png'
 
 const Home = () => {
     const [name, setName] = useState('');
@@ -95,7 +96,7 @@ With years of industry experience, our team of dedicated professionals is commit
   <ul className="cards">
     <li class="cards_item">
       <div class="card">
-        <div class="card_image"><img  className='services-img' src="https://picsum.photos/500/300/?image=14"/></div>
+        <div class="card_image"><img  className='services-img' src="https://plus.unsplash.com/premium_photo-1661425407118-e64871d1ab65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGxvYW58ZW58MHx8MHx8fDA%3D"/></div>
         <div class="card_content">
           <h2 class="card_title">Home Purchase Loans</h2>
           <p>AFS offers loan services in partnership with a reputable Bangalore-based agency.</p>
@@ -105,7 +106,7 @@ With years of industry experience, our team of dedicated professionals is commit
     </li>
     <li class="cards_item">
       <div class="card">
-        <div class="card_image"><img  className='services-img' src="https://picsum.photos/500/300/?image=17"/></div>
+        <div class="card_image"><img  className='services-img' src="https://img.money.com/2023/12/Best-Mortgage-Refinance-Companies-mbci_mb6w3__bhv7ew.jpg?quality=85"/></div>
         <div class="card_content">
           <h2 class="card_title">Refinance Solutions</h2>
            <p>Explore options to optimize your mortgage terms and save on your monthly payments.</p>
@@ -115,7 +116,7 @@ With years of industry experience, our team of dedicated professionals is commit
     </li>
     <li class="cards_item">
       <div class="card">
-        <div class="card_image"><img className='services-img' src="https://picsum.photos/500/300/?image=2"/></div>
+        <div class="card_image"><img className='services-img' src="https://st.depositphotos.com/1011643/4430/i/450/depositphotos_44308801-stock-photo-young-indian-family-with-the.jpg"/></div>
         <div class="card_content">
           <h2 class="card_title">Expert Advice</h2>
            <p>Get professional guidance on navigating the complexities of the home loan process.</p>
@@ -130,7 +131,7 @@ With years of industry experience, our team of dedicated professionals is commit
     <svg width="100%" height="10%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 110.14285714285714,137.75 220.28571428571428,125.5 333,140 C 445.7142857142857,154.5 561,195.75 700,185 C 839,174.25 1001.7142857142858,111.5 1129,97 C 1256.2857142857142,82.5 1348.142857142857,116.25 1440,150 L 1440,400 L 0,400 Z" stroke="none" strokeWidth="0" fill="#000070" fillOpacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
      <div className='wrapper' style={{width:"100%"}}>
      <div id='one' style={{backgroundColor:"#fff"}}>
-     <img src={img} width="450" height="300" alt='Responsive 2-column layout'/>
+     <img src="https://i0.wp.com/www.trillionbits.com/wp-content/uploads/2022/09/business-support-services.png?fit=1000%2C1000&ssl=1" width="450" height="300"  style={{height:"90vh"}} alt='Responsive 2-column layout'/>
 
      </div>
      <div id='two' >
@@ -194,7 +195,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
     <blockquote>
       <p>SBI home loans xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz </p>
     </blockquote>
-    <h3>Pratheepa VPS</h3>
+    <h3>Placeholder</h3>
   </figcaption>
 </figure>
 <figure className="snip1533">
@@ -210,7 +211,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
     <blockquote>
       <p>SBI home loans xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz </p>
     </blockquote>
-    <h3>Pratheepa VPS</h3>
+    <h3>Placeholder</h3>
   </figcaption>
 </figure>
 <figure className="snip1533">
@@ -218,7 +219,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
     <blockquote>
       <p>SBI home loans xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz </p>
     </blockquote>
-    <h3>Pratheepa VPS</h3>
+    <h3>Placeholder</h3>
   </figcaption>
 </figure>
 <figure className="snip1533">
@@ -226,7 +227,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
     <blockquote>
       <p>SBI home loans xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz xyz </p>
     </blockquote>
-    <h3>Pratheepa VPS</h3>
+    <h3>Placeholder</h3>
   </figcaption>
 </figure>
     </div>
@@ -236,7 +237,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
         <ul className="cards">
     <li className="cards_item">
       <div className="card">
-        <div className="card_image"><img  className='services-img' src="https://picsum.photos/500/300/?image=14"/></div>
+        <div className="card_image"><img  className='services-img' src="https://plus.unsplash.com/premium_photo-1661425407118-e64871d1ab65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGxvYW58ZW58MHx8MHx8fDA%3D"/></div>
         <div className="card_content">
           <h2 className="card_title">Home Purchase Loans</h2>
           <p>AFS offers loan services in partnership with a reputable Bangalore-based agency.</p>
@@ -251,7 +252,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
       <div className='get-in-touch1' >
       
         <div className='get-in-touch-img1'>
-            <img src="https://meritfinancial.in/wp-content/uploads/2023/10/home_baner.jpg" alt="home"/>
+            <img src={contactImage} alt="home"/>
         </div>
         <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
         <div className="form" id='contact-us'>

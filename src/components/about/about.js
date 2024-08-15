@@ -4,9 +4,11 @@ import './about.css'; // // Assuming you have a CSS file for styling
 import DialogBox from '../DialogBox/DialogBox';
 import emailjs from '@emailjs/browser';
 import team1 from '../../team1.jpeg'
-import team2 from '../../team2.jpeg'
-import team3 from '../../team3.jpeg'
+import team2 from '../../team2.png'
+import team3 from '../../team3.png'
 import img1 from '../../img1.jpeg'
+import contactImage from '../../contact.png'
+import logo from '../../adwitiya.jpeg'
 
 const About = () => {
   const [name, setName] = useState('');
@@ -56,7 +58,7 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper"> 
 <div id='one' style={{background:"#fff"}}>
-<img src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
+<img src={logo} width="450"  alt='Responsive 2-column layout' style={{height:"75vh"}}/>
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHO WE ARE?</h1>
@@ -69,7 +71,7 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper"> 
 <div id='one' style={{backgroundColor:"#fff"}}>
-<img  style={{backgroundColor:"fff"}} src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
+<img  style={{backgroundColor:"fff"}} src='https://img.freepik.com/premium-photo/historic-family-house-with-green-lawn-front-blue-sky-background_769578-275.jpg'  style={{height:"65vh"}} width="450" height="300" alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'  style={{background:"#fff"}}>
   <h1 className='home-headings'>HOW WE THINK?</h1>
@@ -81,7 +83,7 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper">   
 <div id='one'  style={{background:"#fff"}}>
-<img src={img1} width="450" height="300" alt='Responsive 2-column layout'/>
+<img src="https://i0.wp.com/www.trillionbits.com/wp-content/uploads/2022/09/business-support-services.png?fit=1000%2C1000&ssl=1" width="450" height="300" style={{height:"70vh"}} alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHY CHOOSE US?</h1>
@@ -164,7 +166,7 @@ We are also committed to providing our customers with competitive interest rates
 </div>
       <div className='get-in-touch1'>
         <div className='get-in-touch-img1'>
-            <img  src="https://meritfinancial.in/wp-content/uploads/2023/10/home_baner.jpg" alt="home"/>
+            <img  src={contactImage} alt="home"/>
         </div>
         
         <div className='get-in-touch-form1 form-container' style={{backgroundColor:"transparent"}}>

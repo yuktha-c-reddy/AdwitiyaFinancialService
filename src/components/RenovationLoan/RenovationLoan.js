@@ -4,6 +4,7 @@ import renovation from '../../renovation.png'
 import finance from '../../finance.png'
 import { useState , useRef} from 'react';
 import emailjs from '@emailjs/browser';
+import contactImage from '../../contact.png'
 
 import "./RenovationLoan.css"
 
@@ -109,7 +110,7 @@ Home extension and renovation loans are typically offered by banks and other fin
     
     <div class="wrapper" style={{ backgroundColor:"lightblue" ,marginTop:"0px" ,width:"100%"}}>  
 <div id='one'>
-<img src='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80' width="450" height="300" alt='Responsive 2-column layout'/>
+<img src='https://i0.wp.com/www.trillionbits.com/wp-content/uploads/2022/09/business-support-services.png?fit=1000%2C1000&ssl=1' width="450" height="300" alt='Responsive 2-column layout'/>
 </div>
   <div id='two'style={{backgroundColor:"lightblue"}}>
   
@@ -168,7 +169,7 @@ Must have a good credit score</li>
       <div className='get-in-touch1' >
         <div className='get-in-touch-img-div'>
         <div className='get-in-touch-img1'>
-            <img src="https://meritfinancial.in/wp-content/uploads/2023/10/home_baner.jpg" alt="home"/>
+            <img src={contactImage} alt="home"/>
         </div>
         </div>
         <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
