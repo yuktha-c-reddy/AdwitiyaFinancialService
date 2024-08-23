@@ -190,6 +190,7 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
    
   </figcaption>
 </figure>
+
 {/* <figure className="snip1533">
   <figcaption>
     <blockquote>
@@ -231,6 +232,8 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
   </figcaption>
 </figure> */}
     </div>
+    <br/>
+    <Link className="home-enquiry-btn" onClick="">Add a review</Link>
     <div className='latest-articles'>
         <h1 className='home-headings'>Latest Articles</h1>
         <div className='main'>
