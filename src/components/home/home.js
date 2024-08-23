@@ -131,7 +131,7 @@ With years of industry experience, our team of dedicated professionals is commit
     <svg width="100%" height="10%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 110.14285714285714,137.75 220.28571428571428,125.5 333,140 C 445.7142857142857,154.5 561,195.75 700,185 C 839,174.25 1001.7142857142858,111.5 1129,97 C 1256.2857142857142,82.5 1348.142857142857,116.25 1440,150 L 1440,400 L 0,400 Z" stroke="none" strokeWidth="0" fill="#000070" fillOpacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
      <div className='wrapper' style={{width:"100%"}}>
      <div id='one' style={{backgroundColor:"#fff"}}>
-     <img src="https://i0.wp.com/www.trillionbits.com/wp-content/uploads/2022/09/business-support-services.png?fit=1000%2C1000&ssl=1" width="450" height="300"  style={{height:"90vh"}} alt='Responsive 2-column layout'/>
+     <img src={img} width="450" height="300"  style={{height:"90vh"}} alt='Responsive 2-column layout'/>
 
      </div>
      <div id='two' >

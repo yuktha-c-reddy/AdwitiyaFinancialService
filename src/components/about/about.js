@@ -83,7 +83,7 @@ const About = () => {
 <div className='about-wrapper'>
 <div class="wrapper">   
 <div id='one'  style={{background:"#fff"}}>
-<img src="https://i0.wp.com/www.trillionbits.com/wp-content/uploads/2022/09/business-support-services.png?fit=1000%2C1000&ssl=1" width="450" height="300" style={{height:"70vh"}} alt='Responsive 2-column layout'/>
+<img src={img1} width="450" height="300"  alt='Responsive 2-column layout'/>
 </div> 
   <div id='two'>
   <h1 className='home-headings'>WHY CHOOSE US?</h1>
@@ -92,17 +92,17 @@ const About = () => {
       <li>🟦
         
         We are a team of experienced and qualified professionals who are passionate about helping our customers achieve their homeownership goals.
-        </li>
+        </li><br/>
       <li>🟦
         
        
         We offer a wide range of home loan products to suit the needs of all our customers, including first-time homebuyers, investors, and those who are looking to refinance their existing mortgages.
-        </li>
+        </li><br/>
       <li>🟦
         
         
         We are committed to providing our customers with the highest level of service and support. We understand that the home buying process can be complex and stressful, so we are here to help our customers every step of the way.
-        </li>
+        </li><br/>
       <li>🟦
         
 We are also committed to providing our customers with competitive interest rates and flexible repayment options. We want to make sure that our customers can find the right home loan for their needs and budget.
