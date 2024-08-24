@@ -14,6 +14,7 @@ import PropertyLoan from './components/PropertyLoan/PropertyLoan';
 import RenovationLoan from './components/RenovationLoan/RenovationLoan';
 import House from './components/landing/landing';
 import DialogBox from './components/DialogBox/DialogBox';
+import Gallery from './components/gallery/Gallery';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/renovation-loan" element={<RenovationLoan/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/blog" element={<Blog/>} />
+        <Route path="/gallery" element={<Gallery/>} />
         </Routes>
         <Footer/>
         </Router>
