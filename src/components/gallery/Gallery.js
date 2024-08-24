@@ -7,19 +7,25 @@ const Gallery = () => {
   return (
     <div className='gallery'>
       <div className="g">
-        <a href="" >1
+        <a href="" target="_blank" rel="noopener noreferrer">1
           <img
             src={gimg1}
             alt="Image 1"
           />
         </a>
-        <a href="">2
+        <a href="" target="_blank" rel="noopener noreferrer">2
           <img
             src={gimg2}
-            alt="Image 2" 
+            alt="Image 2"
           />
         </a>
         
+        {/* <a href="https://unsplash.com/photos/GfAC-LoRqMU" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://images.unsplash.com/photo-1553870587-ffe7752a5b1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1330&q=80"
+            alt="Image 4"
+          />
+        </a> */}
       </div>
       <article>
         <h1 className='blog-headings '>Step into our world!</h1>
