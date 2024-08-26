@@ -226,4 +226,6 @@
       transform: scale(1) rotateZ(-3deg);
     }
   }
-  
+  .error{
+    color:#fff;
+  }

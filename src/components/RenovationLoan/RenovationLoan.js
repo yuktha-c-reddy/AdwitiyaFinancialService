@@ -9,23 +9,47 @@ import contactImage from '../../contact.png'
 import "./RenovationLoan.css"
 
 function RenovationLoan() {
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-  
-  
-  
-    const handleReset = () => {
-      setName('');
-      setPhone('');
-      setEmail('');
-      setMessage('');
-    };
-    const form1 = useRef();
-    const sendEmail = (e) => {
-      e.preventDefault();
-  
+     const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const form1 = useRef();
+
+  const handleReset = () => {
+    setName('');
+    setPhone('');
+    setEmail('');
+    setMessage('');
+    setErrors({});
+  };
+
+  const validateForm = () => {
+    let formErrors = {};
+    const phoneRegex = /^[0-9]{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name) {
+      formErrors.name = "Name is required.";
+    }
+
+    if (!phone || !phoneRegex.test(phone)) {
+      formErrors.phone = "Valid phone number is required (10 digits).";
+    }
+
+    if (!email || !emailRegex.test(email)) {
+      formErrors.email = "Valid email address is required.";
+    }
+
+    return formErrors;
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length === 0) {
       emailjs
         .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
           publicKey: 'gBGUWAEKgUiiZt5aP',
@@ -33,14 +57,18 @@ function RenovationLoan() {
         .then(
           () => {
             console.log('SUCCESS!');
-            alert("Successfully sent!")
+            alert("Successfully sent!");
+            handleReset();
           },
           (error) => {
             console.log('FAILED...', error.text);
-            alert("Failed to send!")
+            alert("Failed to send!");
           },
         );
-    };
+    } else {
+      setErrors(formErrors);
+    }
+  };
     return (
         <div>
         <div class="home-image-container" style={{width:"100%" , height:"70vh"}}>
@@ -172,46 +200,51 @@ Must have a good credit score</li>
             <img src={contactImage} alt="home"/>
         </div>
         </div>
-        <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
-        <div className="form" id='contact-us'>
-        <form ref={form1} onSubmit={sendEmail}>
-            <span className="heading" style={{fontFamily:"Barlow",color:"#000070"}}>READY TO TAKE THE NEXT STEP?</span>
-            <h5 className='get-in-touch-line' style={{fontFamily:"Barlow",color:"#000"}}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
-            <input
-              placeholder="Name"
-              type="text"
-              className="input"
-              value={name}
-              name="name"
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              placeholder="Phone"
-              type="text"
-              className="input"
-              value={phone}
-              name="phone"
-              onChange={(e) => setPhone(e.target.value)}
-            />
-            <input
-              placeholder="Email address"
-              type="email"
-              className="input"
-              value={email}
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-           
-            <div className="button-container" >
-              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={sendEmail}>
-                Send
-              </div>
-              <div className="reset-button-container">
-                <div className="reset-button" style={{color:"#12c6c9"}} onClick={handleReset}>
-                  Reset
+        <div className='get-in-touch-form1 form-container' style={{ backgroundColor: "transparent" }}>
+          <div className="form" id='contact-us'>
+            <form ref={form1} onSubmit={sendEmail}>
+              <span className="heading" style={{ fontFamily: "Barlow", color: "#000070" }}>READY TO TAKE THE NEXT STEP?</span>
+              <h5 className='get-in-touch-line' style={{ fontFamily: "Barlow", color: "#000070" }}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
+              <input
+                placeholder="Name"
+                type="text"
+                className="input"
+                value={name}
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+              />
+              {errors.name && <p className="errorhome">{errors.name}</p>}
+
+              <input
+                placeholder="Phone"
+                type="text"
+                className="input"
+                value={phone}
+                name="phone"
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              {errors.phone && <p className="errorhome">{errors.phone}</p>}
+
+              <input
+                placeholder="Email address"
+                type="email"
+                className="input"
+                value={email}
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errors.email && <p className="errorhome">{errors.email}</p>}
+
+              <div className="button-container">
+                <div className="send-button" onClick={sendEmail}>
+                  Send
+                </div>
+                <div className="reset-button-container">
+                  <div className="reset-button" onClick={handleReset}>
+                    Reset
+                  </div>
                 </div>
               </div>
-            </div>
             </form>
           </div>
         </div>

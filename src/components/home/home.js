@@ -1,132 +1,183 @@
-import React from 'react';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './home.css'; 
 import DialogBox from '../DialogBox/DialogBox';
 import emailjs from '@emailjs/browser';
-import img from '../../img1.jpeg'
-import contactImage from '../../contact.png'
+import img from '../../img1.jpeg';
+import contactImage from '../../contact.png';
 
 const Home = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-  
-  
-  
-    const handleReset = () => {
-      setName('');
-      setPhone('');
-      setEmail('');
-      setMessage('');
-    };
+    const [errors, setErrors] = useState({});
+    const [phoneErrors, setPhoneErrors] = useState({});
+
     const form1 = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
+    const phoneform = useRef();
 
-    emailjs
-      .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
-        publicKey: 'gBGUWAEKgUiiZt5aP',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          alert("Successfully sent!")
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-          alert("Failed to send!")
-        },
-      );
-  };
-  const phoneform = useRef();
-  const sendEmailphone = (e) => {
-    e.preventDefault();
+    // Validation for the general form
+    const validateForm = () => {
+        const newErrors = {};
+        
+        if (!name) newErrors.name = "Name is required";
+        if (!phone || !/^\d{10}$/.test(phone)) newErrors.phone = "Valid phone number is required";
+        if (!email || !/\S+@\S+\.\S+/.test(email)) newErrors.email = "Valid email is required";
+        
+        setErrors(newErrors);
 
-    emailjs
-      .sendForm('service_q08ii5o', 'template_rl3b2hg', phoneform.current, {
-        publicKey: 'gBGUWAEKgUiiZt5aP',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          alert("Successfully sent!")
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-          alert("Failed to send!")
-        },
-      );
-  };
-  
-  return (
-    <div className="home">
-    <DialogBox/>
-    <div className="home-image-container">
-    <img src="https://assets-news.housing.com/news/wp-content/uploads/2019/11/02110936/How-to-get-a-home-loan-to-construct-your-own-house-FB-1200x700-compressed-1200x700.jpg" alt="image" />
-	    <div className="overlay-text">
-        <p style={{color:"white"}}>Home Loan Solutions for Every Dream Home</p>
-        <h1 className='home-tagline' >YOUR PATH TO HOMEOWNERSHIP<br/> STARTS HERE</h1>
-        <p>Get a free Check with our unique service provider. Take the first step towards your future today!</p>
-        <form ref={phoneform}>
-        <input placeholder="Enter phone number" name="phone" className="input-style" type="text"/><br/><br/>
-        <button className="home-enquiry-btn" onClick={sendEmailphone}>Submit</button>
-        </form>
-	    </div>
-    </div>
-    <div className='welcome'>
-        <h1 className='home-headings1'>Welcome to AFS</h1>
-        <h1 className='tagline'>Unique Service Provider</h1>
-        <p  className='welcome-text' style={{textAlign:"center"}}>At Adwitiya Financial Services, we understand that purchasing a home is not just a financial decision but a deeply personal milestone. Our mission is to empower you on your journey to homeownership, providing expert guidance and flexible home loan solutions tailored to your unique needs.
-<br/><br/>
-With years of industry experience, our team of dedicated professionals is committed to making your dream of owning a home a reality. Whether you’re a first-time buyer or looking to refinance, trust Adwitiya to be your partner every step of the way. We provide property loans in Bangalore, partnering with SBI, HDFC, Federal Bank, LIC, ICICI , PNB , BOB and BOI  for your financial success.</p>
-    </div>
-   
-    <div className="widget">
-  <div className="widget-card">1<p>Location</p></div>
-  <div className="widget-card">15+<p>Employees</p></div>
-  <div className="widget-card">1700+ <p>Happy Customers</p></div>
-  <div className="widget-card">1560+ <p>Satisfaction</p></div>
-</div>
+        return Object.keys(newErrors).length === 0;
+    };
 
-    <div className='our-services'>
-        <h1 className='home-headings'>Our Services</h1>
-        <div className="main">
-  <ul className="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img  className='services-img' src="https://plus.unsplash.com/premium_photo-1661425407118-e64871d1ab65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGxvYW58ZW58MHx8MHx8fDA%3D"/></div>
-        <div class="card_content">
-          <h2 class="card_title">Home Purchase Loans</h2>
-          <p>AFS offers loan services in partnership with a reputable Bangalore-based agency.</p>
-         
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img  className='services-img' src="https://img.money.com/2023/12/Best-Mortgage-Refinance-Companies-mbci_mb6w3__bhv7ew.jpg?quality=85"/></div>
-        <div class="card_content">
-          <h2 class="card_title">Refinance Solutions</h2>
-           <p>Explore options to optimize your mortgage terms and save on your monthly payments.</p>
-         
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img className='services-img' src="https://st.depositphotos.com/1011643/4430/i/450/depositphotos_44308801-stock-photo-young-indian-family-with-the.jpg"/></div>
-        <div class="card_content">
-          <h2 class="card_title">Expert Advice</h2>
-           <p>Get professional guidance on navigating the complexities of the home loan process.</p>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
+    // Validation for the phone form
+    const validatePhoneForm = () => {
+        const newPhoneErrors = {};
 
-    </div>
+        if (!phone || !/^\d{10}$/.test(phone)) newPhoneErrors.phone = "Valid phone number is required";
+
+        setPhoneErrors(newPhoneErrors);
+
+        return Object.keys(newPhoneErrors).length === 0;
+    };
+
+    const handleReset = () => {
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+        setErrors({});
+        setPhoneErrors({});
+    };
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        emailjs
+          .sendForm('service_q08ii5o', 'template_572ozkr', form1.current, {
+            publicKey: 'gBGUWAEKgUiiZt5aP',
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+              alert("Successfully sent!");
+              handleReset();
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+              alert("Failed to send!");
+            }
+          );
+    };
+
+    const sendEmailphone = (e) => {
+        e.preventDefault();
+
+        if (!validatePhoneForm()) return;
+
+        emailjs
+          .sendForm('service_q08ii5o', 'template_rl3b2hg', phoneform.current, {
+            publicKey: 'gBGUWAEKgUiiZt5aP',
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+              alert("Successfully sent!");
+              setPhone('');
+              setPhoneErrors({});
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+              alert("Failed to send!");
+            }
+          );
+    };
+
+    return (
+        <div className="home">
+            <DialogBox />
+            <div className="home-image-container">
+                <img src="https://assets-news.housing.com/news/wp-content/uploads/2019/11/02110936/How-to-get-a-home-loan-to-construct-your-own-house-FB-1200x700-compressed-1200x700.jpg" alt="image" />
+                <div className="overlay-text">
+                    <p style={{color: "white"}}>Home Loan Solutions for Every Dream Home</p>
+                    <h1 className='home-tagline'>YOUR PATH TO HOMEOWNERSHIP<br/> STARTS HERE</h1>
+                    <p>Get a free Check with our unique service provider. Take the first step towards your future today!</p>
+                    <form ref={phoneform}>
+                        <input
+                            placeholder="Enter phone number"
+                            name="phone"
+                            className={`input-style ${phoneErrors.phone ? 'input-error' : ''}`}
+                            type="text"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                        />
+                        {phoneErrors.phone && <p className="error-message">{phoneErrors.phone}</p>}
+                        <br/><br/>
+                        <button className="home-enquiry-btn" onClick={sendEmailphone}>Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div className='welcome'>
+                <h1 className='home-headings1'>Welcome to AFS</h1>
+                <h1 className='tagline'>Unique Service Provider</h1>
+                <p className='welcome-text' style={{textAlign: "center"}}>
+                    At Adwitiya Financial Services, we understand that purchasing a home is not just a financial decision but a deeply personal milestone. Our mission is to empower you on your journey to homeownership, providing expert guidance and flexible home loan solutions tailored to your unique needs.
+                    <br/><br/>
+                    With years of industry experience, our team of dedicated professionals is committed to making your dream of owning a home a reality. Whether you’re a first-time buyer or looking to refinance, trust Adwitiya to be your partner every step of the way. We provide property loans in Bangalore, partnering with SBI, HDFC, Federal Bank, LIC, ICICI , PNB , BOB and BOI for your financial success.
+                </p>
+            </div>
+
+            <div className="widget">
+                <div className="widget-card">1<p>Location</p></div>
+                <div className="widget-card">15+<p>Employees</p></div>
+                <div className="widget-card">1700+<p>Happy Customers</p></div>
+                <div className="widget-card">1560+<p>Satisfaction</p></div>
+            </div>
+
+            <div className='our-services'>
+                <h1 className='home-headings'>Our Services</h1>
+                <div className="main">
+                    <ul className="cards">
+                        <li className="cards_item">
+                            <div className="card">
+                                <div className="card_image">
+                                    <img className='services-img' src="https://plus.unsplash.com/premium_photo-1661425407118-e64871d1ab65?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGxvYW58ZW58MHx8MHx8fDA%3D"/>
+                                </div>
+                                <div className="card_content">
+                                    <h2 className="card_title">Home Purchase Loans</h2>
+                                    <p>AFS offers loan services in partnership with a reputable Bangalore-based agency.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="cards_item">
+                            <div className="card">
+                                <div className="card_image">
+                                    <img className='services-img' src="https://img.money.com/2023/12/Best-Mortgage-Refinance-Companies-mbci_mb6w3__bhv7ew.jpg?quality=85"/>
+                                </div>
+                                <div className="card_content">
+                                    <h2 className="card_title">Refinance Solutions</h2>
+                                    <p>Explore options to optimize your mortgage terms and save on your monthly payments.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="cards_item">
+                            <div className="card">
+                                <div className="card_image">
+                                    <img className='services-img' src="https://st.depositphotos.com/1011643/4430/i/450/depositphotos_44308801-stock-photo-young-indian-family-with-the.jpg"/>
+                                </div>
+                                <div className="card_content">
+                                    <h2 className="card_title">Expert Advice</h2>
+                                    <p>Get professional guidance on navigating the complexities of the home loan process.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        
     <div className='why-choose-us' style={{backgroundColor:"#fff"}}>
     <svg width="100%" height="10%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 110.14285714285714,137.75 220.28571428571428,125.5 333,140 C 445.7142857142857,154.5 561,195.75 700,185 C 839,174.25 1001.7142857142858,111.5 1129,97 C 1256.2857142857142,82.5 1348.142857142857,116.25 1440,150 L 1440,400 L 0,400 Z" stroke="none" strokeWidth="0" fill="#000070" fillOpacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
      <div className='wrapper' style={{width:"100%"}}>
@@ -257,52 +308,53 @@ MOST RECOMMENDED..........!!! Right kind of service with these guys. Iam really 
         <div className='get-in-touch-img1'>
             <img src={contactImage} alt="home"/>
         </div>
-        <div className='get-in-touch-form1 form-container' style={{ borderLeft:"5px solid #12c6c9", backgroundColor:"transparent",color:"#78c4c6"}}>
-        <div className="form" id='contact-us'>
-        <form ref={form1} onSubmit={sendEmail}>
-            <span className="heading" style={{fontFamily:"Barlow",color:"#000070"}}>READY TO TAKE THE NEXT STEP?</span>
-            <h5 className='get-in-touch-line' style={{fontFamily:"Barlow",color:"#000"}}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
-            <input
-              placeholder="Name"
-              type="text"
-              id="name"
-              className="input"
-              value={name}
-              name="name"
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              placeholder="Phone"
-              type="text"
-              id="phone"
-              className="input"
-              value={phone}
-              name="phone"
-              onChange={(e) => setPhone(e.target.value)}
-            />
-            <input
-              placeholder="Email address"
-              type="email"
-              id="email"
-              className="input"
-              value={email}
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-           
-            <div className="button-container" >
-              <div className="send-button"  style={{backgroundColor:"#12c6c9"}} onClick={sendEmail}>
-                Send
-              </div>
-              <div className="reset-button-container">
-                <div className="reset-button" style={{color:"#12c6c9"}} onClick={handleReset}>
-                  Reset
+        <div className='get-in-touch-form1 form-container' style={{ backgroundColor: "transparent" }}>
+          <div className="form" id='contact-us'>
+            <form ref={form1} onSubmit={sendEmail}>
+              <span className="heading" style={{ fontFamily: "Barlow", color: "#000070" }}>READY TO TAKE THE NEXT STEP?</span>
+              <h5 className='get-in-touch-line' style={{ fontFamily: "Barlow", color: "#000070" }}>Get in touch with our team today for a personalized consultation. Let’s turn your homeownership dreams into reality.</h5>
+              <input
+                placeholder="Name"
+                type="text"
+                className="input"
+                value={name}
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+              />
+              {errors.name && <p className="errorhome">{errors.name}</p>}
+
+              <input
+                placeholder="Phone"
+                type="text"
+                className="input"
+                value={phone}
+                name="phone"
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              {errors.phone && <p className="errorhome">{errors.phone}</p>}
+
+              <input
+                placeholder="Email address"
+                type="email"
+                className="input"
+                value={email}
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errors.email && <p className="errorhome">{errors.email}</p>}
+
+              <div className="button-container">
+                <div className="send-button" onClick={sendEmail}>
+                  Send
+                </div>
+                <div className="reset-button-container">
+                  <div className="reset-button" onClick={handleReset}>
+                    Reset
+                  </div>
                 </div>
               </div>
-            </div>
             </form>
           </div>
-          
         </div>
       </div>
     </div>
