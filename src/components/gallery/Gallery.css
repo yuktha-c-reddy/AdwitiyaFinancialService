@@ -7,3 +7,14 @@
     background:linear-gradient(#fff,#f4f4f4,#d4d4e4);
     min-height: 100vh;
 }
+.team-card-container2 {
+    height:310px;
+    margin: 10px 10px;
+    justify-content: space-between;
+  }
+  .team-card-container1 {
+    height:310px;
+    margin: 10px 10px;
+    justify-content: space-between;
+  }
+ 

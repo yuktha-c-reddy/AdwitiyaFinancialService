@@ -4,6 +4,8 @@ import gimg1 from '../../img1.jpeg'
 import gimg2 from '../../gimg2.jpeg'
 import gimg3 from '../../gimg3.jpeg'
 import gimg4 from '../../gimg4.jpeg'
+import gimg5 from '../../gimg5.jpeg'
+import gimg6 from '../../gimg6.jpeg'
 import { height } from '@fortawesome/free-solid-svg-icons/fa0';
 
 const Gallery = () => {
@@ -35,41 +37,63 @@ const Gallery = () => {
       </div>
       </div> */}
       <div class="responsive-container-block teamcard-container">
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src={gimg1} style={{height:"auto"}}/>
+          <img class="team-img" src={gimg1} />
         </div>
         
       </div>
     </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src={gimg2} style={{height:"auto"}}/>
+          <img class="team-img" src={gimg2} />
         </div>
         
       </div>
 
     </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
       <div class="team-card">
         <div class="team-img-wrapper">
-          <img class="team-img" src={gimg3} style={{height:"auto"}}/>
+          <img class="team-img" src={gimg6} />
         </div>
         
       </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container">
-      <div class="team-card">
-        <div class="team-img-wrapper">
-          <img class="team-img" src={gimg4} style={{height:"auto"}}/>
-        </div>
-        
-      </div>
+
     </div>
     
+   
+    
   </div>
+  <div class="responsive-container-block teamcard-container">
+  <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg3} />
+        </div>
+        
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg4} />
+        </div>
+        
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg5} />
+        </div>
+        
+      </div>
+
+    </div>
+    </div>
     
     </div>
     </div>
