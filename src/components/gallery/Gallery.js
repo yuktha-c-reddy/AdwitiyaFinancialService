@@ -6,6 +6,10 @@ import gimg3 from '../../gimg3.jpeg'
 import gimg4 from '../../gimg4.jpeg'
 import gimg5 from '../../gimg5.jpeg'
 import gimg6 from '../../gimg6.jpeg'
+import gimg7 from '../../img7.jpeg'
+import gimg8 from '../../img8.jpeg'
+import gimg9 from '../../img9.jpeg'
+import gimg10 from '../../img10.jpeg'
 import { height } from '@fortawesome/free-solid-svg-icons/fa0';
 
 const Gallery = () => {
@@ -94,7 +98,60 @@ const Gallery = () => {
 
     </div>
     </div>
-    
+    <div class="responsive-container-block teamcard-container">
+  <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg8} />
+        </div>
+        
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg7} />
+        </div>
+        
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg9} />
+        </div>
+        
+      </div>
+
+    </div>
+    </div>
+    <div class="responsive-container-block teamcard-container">
+  <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg10} />
+        </div>
+        
+      </div>
+    </div>
+    {/* <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg7} />
+        </div>
+        
+      </div>
+    </div> */}
+    {/* <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container1">
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img class="team-img" src={gimg9} />
+        </div>
+        
+      </div>
+
+    </div> */}
+    </div>
     </div>
     </div>
   );
